@@ -32,6 +32,7 @@
 		public var minNum:int = 2;
 		public var eleccion_prenda:int = 1;
 		public var acierto:int = 0;
+		public var termino = false;
 		//public texto1_txt.text = String(acierto);
 
 		public var pantalla_ini:pantalla_inicio=new pantalla_inicio();
@@ -58,7 +59,8 @@
 
 		public function init():void
 		{
-			volver.visible = false;
+			
+			Volver.visible = false;
 			texto1_txt.text = String(acierto);
 			addChild(pantalla_ini);
 			pantalla_ini.addEventListener(MouseEvent.CLICK, onClickInicio);
@@ -228,22 +230,25 @@
 			segundos -=  1;
 			//trace ("seg" + segundos);
 
-			if (segundos == -10)
+			if (segundos == -60)
 			{
 				tiempo.text = "TERMINÓ";
 
 				Pantalla_volver();
+				
 			}
 }
 		function Pantalla_volver():void
 			{
-				volver.visible = true;
-				volver.final_txt.text = String(acierto);
-				volver.boton_volver.addEventListener(MouseEvent.CLICK, onClickVolver);
+				
+				Volver.visible = true;
+				Volver.final_txt.text = String(acierto);
+				Volver.addEventListener(MouseEvent.CLICK, onClickVolver);
 			}
 
 			function onClickVolver(event:MouseEvent):void
 			{
+				 termino = true;
 				acierto = 0;
 				arriba.gotoAndPlay(1);
 				tira_medio.gotoAndPlay(1);
