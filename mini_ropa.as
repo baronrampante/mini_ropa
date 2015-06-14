@@ -200,7 +200,7 @@
 				if (parte_arriba == eleccion_prenda)
 				{
 
-					tiempo.text = "ACERTASTES!!";
+					tiempo.text = "ACERTASTE!!";
 					acierto = acierto + 1;
 					texto1_txt.text = String(acierto);
 					eleccion_prenda = 0;
